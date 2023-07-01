@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import './App.css'
+import SlotM from './SlotM'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const symbol = ['👍', '🥇', '🎅', '🙉', '🍎', '🍌', '🕌'];
+
+const generateRandom =()=>{
+  const randomIdx = Math.floor(Math.random() * symbol.length);
+  return symbol[randomIdx]
+}
+
+const App=()=>{
+  return(
+    <>
+      <h1 className='heading_style'> {'🎰'} Welcome to Slot Machine Game {'🎰'}</h1>
+      <div className='slotmachine'>
+      <SlotM x= {generateRandom()}  y= {generateRandom()} z= {generateRandom()} />
+      <SlotM x= {generateRandom()}  y= {generateRandom()} z= {generateRandom()}/>
+      <SlotM x= {generateRandom()}  y= {generateRandom()} z= {generateRandom()}/>
+      <SlotM x= {generateRandom()}  y= {generateRandom()} z= {generateRandom()}/>
+      </div>
+    </>
+  )
 }
 
 export default App;
